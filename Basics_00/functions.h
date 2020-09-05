@@ -98,4 +98,156 @@ float middle_value(float a, float b, float c)
 	return sum - max_value - min_value;
 }
 
+struct quadratic_eq {
+	float x1;
+	float x2;
+	float delta;
+};
 
+void calculate_roots(quadratic_eq *eq, float a, float b, float c)
+{
+	eq->delta = pow(b, 2) - 4 * a*c;
+	eq->x1 = (-b - sqrt(eq->delta)) / 2 * a;
+	eq->x2 = (-b + sqrt(eq->delta)) / 2 * a;
+}
+
+void print_101010_v1(int n)
+{
+	for (int i = 0; i < n; i++)
+		if (i % 2 == 0) cout << "1 ";
+		else cout << "0 ";
+	cout << endl;
+}
+
+void print_101010_v2(int n)
+{
+	bool b = 1;
+	for (int i = 0; i < n; i++) 
+	{
+		cout << b << " ";
+		b = !b;
+	}
+	cout << endl;
+}
+
+void print_101010_v3(int n)
+{
+	for (int i = 1; i <= n; i++)
+		cout << i % 2 << " ";
+	cout << endl;
+}
+
+void print_1248(int n)
+{
+	for (int i = 1; i <= n; i *= 2)
+		cout << i << " ";
+	cout << endl;
+}
+
+void print_ASCII_codes()
+{
+	cout << endl;
+	for (int i = 0; i < 255; i++)
+	{
+		cout << (char)i << "-" << i << "\t";
+		if (i % 10 == 9)cout << endl;
+	}
+	cout << endl;
+}
+
+void print_revert_digits_number(int n)
+{
+	for (int t = n; t; t = t / 10)
+		cout << t % 10 << endl;
+}
+
+void print_divisors(int number)
+{
+	for (int d = 1; d <= number; d++)
+		if (number%d == 0) cout << d << " ";
+	cout << endl;
+}
+
+void check_prime_number(int n)
+{
+	bool prime = true;
+	for (int d = 2; d <= n / 2; d++)
+		if (n % d == 0) prime = false;
+	if (prime == false) cout << n << " is not a prime number!\n";
+	int div = 2;
+	// Print div factors
+	while (n != 1)
+	{
+		if (n % div == 0)
+		{
+			cout << div << " ";
+			n = n / div;
+		}
+		else div++;
+	}
+	cout << endl;
+}
+
+int cmmdc(int a, int b)
+{
+	while (a != b)
+	{
+		if (a > b) a = a - b;
+		else b = b - a;
+	}
+
+	return a;
+}
+
+int cmmmc(int a, int b)
+{
+	return (a*b) / cmmdc(a, b);
+}
+
+int factorial(int n)
+{
+	int fact = 1;
+	for (int i = 1; i <= n; i++)
+		fact *= i;
+	return fact;
+}
+
+int sum_of_digits(int number)
+{
+	int digit = number % 10;
+	int sum = 0;
+	while (number > 0)
+	{
+		sum += digit;
+		number /= 10;
+		digit = number % 10;
+	}
+	return sum;
+}
+
+int mul_of_even_digits(int number)
+{
+	int mul = 1;
+	for (int i = number; i; i = i / 10)
+		if (i % 2 == 0) mul *= i % 10;
+	return mul;
+}
+
+int first_digit_number(int number)
+{
+	int digit = number % 10;
+	while (number > 10)
+	{
+		number /= 10;
+		digit = number % 10;
+	}
+	return digit;
+}
+
+int first_digit_counter(int number)
+{
+	int ct = 0;
+	for (int i = number; i; i = i / 10)
+		if (i % 10 == first_digit_number(number)) ct++;
+	return ct;
+}
