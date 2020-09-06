@@ -91,8 +91,8 @@ float max(float a, float b)
 
 float middle_value(float a, float b, float c)
 {
-	int min_value, max_value;
-	int sum = a + b + c;
+	float min_value, max_value;
+	float sum = a + b + c;
 	min(a, b) < c ? min_value = min(a, b) : min_value = c;
 	max(a, b) > c ? max_value = max(a, b) : max_value = c;
 	return sum - max_value - min_value;
@@ -195,7 +195,6 @@ int cmmdc(int a, int b)
 		if (a > b) a = a - b;
 		else b = b - a;
 	}
-
 	return a;
 }
 
@@ -250,4 +249,48 @@ int first_digit_counter(int number)
 	for (int i = number; i; i = i / 10)
 		if (i % 10 == first_digit_number(number)) ct++;
 	return ct;
+}
+
+int max_digit_from_number(int number)
+{
+	int max = -1;
+	for (int i = number; i; i = i / 10)
+		if (i % 10 > max) max = i % 10;
+	return max;
+}
+
+int min_digit_from_number(int number)
+{
+	int min = 9;
+	for (int i = number; i; i = i / 10)
+		if (i % 10 < min) min = i % 10;
+	return min;
+}
+
+int count_min_digit_from_number(int number)
+{
+	int ct = 0;
+	for (int i = number; i; i = i / 10)
+		if (i % 10 == min_digit_from_number(number)) ct++;
+	return ct;
+}
+
+void check_for_same_digits(int number1, int number2)
+{
+	bool check;
+	for (int i = number1; i; i = i / 10)
+	{
+		check = false;
+		for (int t = number2; t; t = t / 10)
+		{
+			if (i % 10 == t % 10) check = true;
+
+		}
+		if (check == false)
+		{
+			cout << number1 << " doesn't have the same digits as " << number2 << endl;
+			break;
+		}
+	}
+	cout << number1 << " has the same digits as " << number2 << endl;
 }

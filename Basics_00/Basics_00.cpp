@@ -1,7 +1,7 @@
 // Basics_00.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
-#include "functions.h"
+#include "functions_00.h"
 #include <iostream>
 
 using namespace std;
@@ -63,6 +63,10 @@ int main()
 	cout << "mul_of_even_digits(897836)= " << mul_of_even_digits(897836) << endl;
 	cout << "first_digit_number(897836)= " << first_digit_number(897836) << endl;
 	cout << "first_digit_counter(897836)= " << first_digit_counter(897836) << endl;
+	cout << "max_digit_from_number(897836)= " << max_digit_from_number(897836) << endl;
+	cout << "min_digit_from_number(897836)= " << min_digit_from_number(897836) << endl;
+	cout << "count_min_digit_from_number(897836)= " << count_min_digit_from_number(897836) << endl;
+	check_for_same_digits(123, 11321);
 	newline();
 	
 }
