@@ -89,6 +89,36 @@ float max(float a, float b)
 	else return b;
 }
 
+int max(int a, int b)
+{
+	return (a > b) ? a : b;
+}
+
+int max(int a, int b, int c)
+{
+	return max(max(a, b), c);
+}
+
+int maxi(int a = -INT_MAX, int b = -INT_MAX, int c = -INT_MAX, int d = -INT_MAX)
+{
+	return max(max(a, b), max(c, d));
+}
+
+void what_type(int n)
+{
+	cout << n << " is an integer!\n";
+}
+
+void what_type(float n)
+{
+	cout << n << " is a float number!\n";
+}
+
+void what_type(char n)
+{
+	cout << n << " is a character!\n";
+}
+
 float middle_value(float a, float b, float c)
 {
 	float min_value, max_value;

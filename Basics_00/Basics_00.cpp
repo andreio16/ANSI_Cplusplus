@@ -17,7 +17,14 @@ int main()
 	cout << "Exercise 1)\tEquation : x^2 / (x - 1) \n x=";
 	cin >> x;
 	cout << ">Result = " << equation1(x) << "\n";
-	cout << ">Fractional part : " << fracional_part_of_number(equation1(x)) << "\n";
+	cout << ">Fractional part : " << fracional_part_of_number(equation1(x)) << "}\n";
+	cout << "MAXI {21,53,1,66} = {" << maxi(21, 53, 1, 66) << "}\n";
+	cout << "MAXI {21,53,1} = {" << maxi(21, 53, 1) << "}\n";
+	cout << "MAX {2,5,1} = {" << max(2, 5, 1) << "}\n";
+	cout << "MAX {41,7} = {" << max(41, 7) << "}\n";
+	what_type(123);
+	what_type(3.14f);
+	what_type('e');
 
 	newline();
 	cout << "Exercise 2)\tMiddle value from (17, 33, 9) = " << middle_value(17, 33, 9) << "\n";
