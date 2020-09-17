@@ -223,3 +223,35 @@ int sum(int nr, ...)
 		s += p[i];
 	return s;
 }
+
+int cmmdc(int a, int b)
+{
+	while (a != b)
+	{
+		if (a > b) a = a - b;
+		else b = b - a;
+	}
+	return a;
+}
+
+int cmmdc_n(int nr, ...)
+{
+	int *p = &nr;
+	p++;
+	int first = *p;
+	p++;
+	for (int i = 1; i <= nr; i++)
+		first = cmmdc(first, p[i]);
+	
+	return first;
+}
+
+int funct_x2(int n) { return 2 * n; }
+
+int special(int (*f)(int), int *vect, int len)
+{
+	int min = INT_MAX;
+	for (int i = 0; i < len; i++)
+		if (f(vect[i]) < min) min = f(vect[i]);
+	return min;
+}

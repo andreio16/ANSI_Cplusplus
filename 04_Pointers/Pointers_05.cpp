@@ -115,9 +115,18 @@ int main()
 
 	newline();
 	cout << "\n[FUNCTIONS WITH VARIABLE NR OF PARAM] :\n\n";
+	cout << "Results from functions :\n";
 	cout << calculate((char *)"+++", 1, 2, 3, 4) << endl;
 	cout << calculate((char *)"-+-+", -1, 2, -3, 4,-5) << endl;
 	cout << calculate((char *)"-+-+--+", -1, 2, -3, 4, -5, 12, 5,-3) << endl;
 	cout << sum(4, 1, 2, 3, 4) << endl;
 	cout << sum(5, -1, 2, -3, 4, -5) << endl;
+	cout << cmmdc_n(5, 2, 4, 6, 8, 16) << endl;
+	cout << cmmdc_n(2, 32, 16, 120) << endl;
+	cout << cmmdc(32, 120) << endl;
+	cout << "vect : "; print_vector(a, m1);
+	cout << "The double-min value from vector is " << special(funct_x2, a, m1) << ".\n";
+	
+
+
 }
